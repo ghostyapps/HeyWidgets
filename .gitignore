@@ -1,0 +1,32 @@
+# Gradle dosyaları
+.gradle/
+build/
+
+# IDE dosyaları (Android Studio / IntelliJ)
+*.iml
+.idea/
+/local.properties
+.externalNativeBuild/
+.cxx/
+captures/
+
+# Kullanıcıya özel ayarlar
+*.swp
+*~
+.DS_Store
+
+# Google Services (Eğer Firebase vb. eklersen diye şimdiden ekle)
+google-services.json
+
+# Android Studio Logları
+/captures/
+
+# APK ve Bundle çıktıları
+*.apk
+*.bundle
+
+# Keystore dosyaları (Uygulamayı imzalarsan asla Github'a gitmemeli!)
+*.jks
+*.keystore
+*.p12
+*.google_play_keys
