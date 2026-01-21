@@ -1,3 +1,7 @@
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -29,6 +33,22 @@ android {
             )
         }
     }
+
+    androidComponents {
+        onVariants { variant ->
+            variant.outputs.forEach { output ->
+                val name = "HeyWidgets"
+                val versionName = variant.outputs.first().versionName.get()
+
+                // Tarih formatını burada tanımlıyoruz
+                val date = SimpleDateFormat("yyyy-MM-dd_HH-mm", Locale.getDefault()).format(Date())
+
+                val fileName = "${name}_v${versionName}_${date}.apk"
+                (output as com.android.build.api.variant.impl.VariantOutputImpl).outputFileName.set(fileName)
+            }
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
