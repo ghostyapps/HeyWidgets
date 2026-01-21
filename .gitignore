@@ -22,6 +22,8 @@ google-services.json
 /captures/
 
 # APK ve Bundle çıktıları
+/app/release/
+*.dm
 *.apk
 *.bundle
 
